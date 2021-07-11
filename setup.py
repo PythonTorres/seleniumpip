@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Licensed to the Software Freedom Conservancy (SFC) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -27,12 +29,11 @@ for scheme in INSTALL_SCHEMES.values():
 setup_args = {
     'cmdclass': {'install': install},
     'name': 'selenium',
-    'version': "4.0.0b4",
+    'version': "3.141.0",
     'license': 'Apache 2.0',
     'description': 'Python bindings for Selenium',
     'long_description': open(join(abspath(dirname(__file__)), "README.rst")).read(),
     'url': 'https://github.com/SeleniumHQ/selenium/',
-    'python_requires': '~=3.7',
     'classifiers': ['Development Status :: 5 - Production/Stable',
                     'Intended Audience :: Developers',
                     'License :: OSI Approved :: Apache Software License',
@@ -42,9 +43,10 @@ setup_args = {
                     'Topic :: Software Development :: Testing',
                     'Topic :: Software Development :: Libraries',
                     'Programming Language :: Python',
-                    'Programming Language :: Python :: 3.7',
-                    'Programming Language :: Python :: 3.8',
-                    'Programming Language :: Python :: 3.9'],
+                    'Programming Language :: Python :: 2.7',
+                    'Programming Language :: Python :: 3.4',
+                    'Programming Language :: Python :: 3.5',
+                    'Programming Language :: Python :: 3.6'],
     'package_dir': {
         'selenium': 'selenium',
         'selenium.common': 'selenium/common',
@@ -53,7 +55,7 @@ setup_args = {
     'packages': ['selenium',
                  'selenium.common',
                  'selenium.webdriver',
-                 'selenium.webdriver.chromium',
+                 'selenium.webdriver.android',
                  'selenium.webdriver.chrome',
                  'selenium.webdriver.common',
                  'selenium.webdriver.common.html5',
@@ -62,10 +64,11 @@ setup_args = {
                  'selenium.webdriver.ie',
                  'selenium.webdriver.edge',
                  'selenium.webdriver.opera',
+                 'selenium.webdriver.phantomjs',
                  'selenium.webdriver.remote',
                  'selenium.webdriver.support', ],
     'include_package_data': True,
-    'install_requires': ['urllib3[secure]', "trio", "trio-websocket"],
+    'install_requires': ['urllib3'],
     'zip_safe': False
 }
 
